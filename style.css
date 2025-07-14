@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom, #1c1c1c, #333333);
+  color: #FFD700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+.welcome-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+.welcome-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ff99;
+}
+.bee-logo {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: flap 2s infinite;
+}
+.start-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  color: #1c1c1c;
+  background-color: #FFD700;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+.start-button:hover {
+  background-color: #e0c000;
+}
+.welcome-container p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+@keyframes flap {
+  0% {transform: scale(1) rotate(0deg);}
+  25% {transform: scale(1.05) rotate(-3deg);}
+  50% {transform: scale(1.1) rotate(3deg);}
+  75% {transform: scale(1.05) rotate(-3deg);}
+  100% {transform: scale(1) rotate(0deg);}
+}
+.notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #00ff99;
+  color: #1c1c1c;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+  display: none;
+  z-index: 999;
+}
+.scan-result {
+  margin-top: 30px;
+  color: #fff;
+  background-color: #2e2e2e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.3);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+  border: 1px solid #444;
+}
+.fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fedeIn {
+ 0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

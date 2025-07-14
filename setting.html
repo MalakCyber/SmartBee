@@ -1,0 +1,59 @@
+    <button class="protect-button"> Activate Protection</button>
+    <button class="back-button" onclick="goBackToShield()">⬅️ Back to Shield</button>
+  </div>
+
+  <div id="notification" class="notification"></div>
+  <div id="scan-result" class="scan-result"></div>
+  <div class="shield-container fade-in">
+
+
+  <script>
+    function showNotification(message) {
+      const note = document.getElementById("notification");
+      note.textContent = message;
+      note.style.display = "block";
+      setTimeout(() => {
+        note.style.display = "none";
+      }, 3000);
+    }
+
+    function animateBee() {
+      const bee = document.getElementById("bee");
+      bee.classList.add("bee-animate");
+      setTimeout(() => {
+        bee.classList.remove("bee-animate");
+      }, 1000);
+    }
+
+    document.querySelector(".scan-button").addEventListener("click", function () {
+      showNotification(" Smart Bee is scanning your system...");
+      animateBee();
+      setTimeout(() => {
+        document.getElementById("scan-result").innerHTML = `
+          <h2> Scan Result</h2>
+          <table>
+            <tr><th>Threat</th><th>Level</th><th>Status</th></tr>
+            <tr><td>Adware.Trace</td><td style="color:orange;">Medium</td><td>Quarantined</td></tr>
+            <tr><td>Tracking.Cookie</td><td style="color:red;">High</td><td>Removed</td></tr>
+            <tr><td>System Check</td><td style="color:green;">Safe</td><td>No issues</td></tr>
+          </table>
+        `;
+      }, 2000);
+    });
+
+    document.querySelector(".update-button").addEventListener("click", function () {
+      showNotification(" Updating system... Please wait.");
+      animateBee();
+    });
+
+    document.querySelector(".protect-button").addEventListener("click", function () {
+      showNotification("Protection activated. Your system is safe!");
+      animateBee();
+    });
+
+    function goBackToShield() {
+      window.location.href = "shield.html";
+    }
+  </script>
+</body>
+</html>
